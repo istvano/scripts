@@ -123,5 +123,5 @@ check-release: .release		## checks whether the workspace matches the tagged rele
 	@. $(RELEASE_SUPPORT) ; ! differsFromRelease $(TAG) || (echo "ERROR: current directory differs from tagged $(TAG). make [minor,major,patch]-release." && showDiffFromRelease >&2 ; exit 1)
 
 
-help:           ## show this help.
+help::           ## show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | grep -v fgrep | sed -e 's/\([^:]*\):[^#]*##\(.*\)/printf '"'%-20s - %s\\\\n' '\1' '\2'"'/' |bash
